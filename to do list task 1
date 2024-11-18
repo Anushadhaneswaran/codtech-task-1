@@ -1,0 +1,96 @@
+TO DO LIST
+This To-Do List application is a simple task manager that allows users to add tasks to a list. The project is built using HTML, CSS, and JavaScript.
+Features:
+Add Tasks: Users can input a task in the text field and click the "Add task" button. The task is added to an unordered list displayed on the page.
+Task Display: Each task is displayed in its own list item (<li>) with a simple design.
+Basic Styling: The design uses a minimalistic approach, with:
+A centered header with a soft background and italicized text.
+An input field for entering tasks and a button styled in pink for adding tasks.
+A blue background for the task list with white list items that are styled with padding and borders.
+Responsive Layout: The page uses flexbox to center the content, ensuring the list remains centered on the screen regardless of the device's size.
+Clear Input: After a task is added, the input field is cleared automatically to allow for the next task.
+How It Works:
+HTML: The structure consists of a title (<h1>), an input field (<input>), a button (<button>), and an empty unordered list (<ul>) where tasks will be added.
+CSS: The styling ensures the page looks appealing and organized, with a centered layout and consistent color scheme. The tasks are displayed with a light gray background and are visually separated by borders.
+JavaScript: The addTask() function handles adding tasks to the list. When the "Add task" button is clicked, a new list item (<li>) is created, containing the task entered in the input field. If the input is empty, no task is added.
+Next Steps:
+You can enhance this app by adding functionality such as task deletion, task completion toggling, and saving the tasks to localStorage so that tasks persist after a page refresh.
+CODE:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-do List</title>
+  <style>
+    h1 {
+      color: black;
+      background-color: #B2BEB5;
+      font-style: italic;
+      text-align: center;
+      padding: 10px;
+    }
+    body {
+      background-color: grey;
+      font-style: italic;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    button {
+      background-color: pink;
+      font-size: 18px;
+      font-style: italic;
+      margin-top: 10px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+    ul {
+      background-color: blue;
+      padding: 10px;
+      list-style-type: none;
+      width: 300px;
+      margin-top: 20px;
+    }
+    li {
+      background-color: #f9f9f9;
+      padding: 10px;
+      margin: 5px 0;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>To do list</h1>
+  <input type="text" id="taskInput" placeholder="Enter your task">
+  <button onclick="addTask()">Add task</button>
+  <ul id="taskList"></ul>
+
+  <script>
+    function addTask() {
+      const taskInput = document.getElementById("taskInput");
+      if (taskInput.value !== '') {
+        const li = document.createElement("li");
+        li.textContent = taskInput.value
+        const taskList = document.getElementById("taskList");
+        taskList.appendChild(li);
+
+        // Clear the input field after adding the task
+        taskInput.value = "";
+      }
+    }
+  </script>
+
+</body>
+</html>
+OUTPUT:
+
+
+
+
+
